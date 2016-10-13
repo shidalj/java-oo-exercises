@@ -48,13 +48,18 @@ public class FieldPlayer extends Player{
 		FieldPlayer fp = new FieldPlayer("Matt Holliday", 7, ph);
 		AverageHittingStrategy ah = new AverageHittingStrategy();
 		FieldPlayer fp1 = new FieldPlayer("Matt Carpenter", 13, ah);
+		CustomHittingStrategy ch = new CustomHittingStrategy(0.290,0.25);
+		FieldPlayer fp2 = new FieldPlayer("Yadier Molina", 4, ch);
 		cards.addPlayer(fp, 10000000);
 		cards.addPlayer(fp1, 6500000);
+		cards.addPlayer(fp2, 8000000);
 		for(int i = 0; i < 400; i++){
 			fp.simulateAtBat();
 			fp1.simulateAtBat();
+			fp2.simulateAtBat();
 		}
 		System.out.println(fp);
 		System.out.println(fp1);
+		System.out.println(fp2);
 	}
 }
