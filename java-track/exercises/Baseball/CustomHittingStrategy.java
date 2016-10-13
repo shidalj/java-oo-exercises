@@ -6,6 +6,9 @@ public class CustomHittingStrategy implements BattingStrategy {
 	double homeRunRate;
 	
 	public CustomHittingStrategy(double ba, double hrr){
+		if(ba < 0 || ba > 1 || hrr < 0 || hrr > 1){
+			throw new IllegalArgumentException();
+		}
 		this.battingAverage = ba;
 		this.homeRunRate = hrr;
 	}

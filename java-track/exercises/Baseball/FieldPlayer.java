@@ -48,7 +48,20 @@ public class FieldPlayer extends Player{
 		FieldPlayer fp = new FieldPlayer("Matt Holliday", 7, ph);
 		AverageHittingStrategy ah = new AverageHittingStrategy();
 		FieldPlayer fp1 = new FieldPlayer("Matt Carpenter", 13, ah);
-		CustomHittingStrategy ch = new CustomHittingStrategy(0.290,0.25);
+		CustomHittingStrategy ch;
+		try{
+		    ch = new CustomHittingStrategy(0.290,0.25);
+		}
+		catch (IllegalArgumentException e){
+			System.out.println("illegal argument given");
+			e.printStackTrace();
+			return;
+		}
+		catch(Exception e){
+			System.out.println("unexpected exception");
+			e.printStackTrace();
+			return;
+		}
 		FieldPlayer fp2 = new FieldPlayer("Yadier Molina", 4, ch);
 		cards.addPlayer(fp, 10000000);
 		cards.addPlayer(fp1, 6500000);
