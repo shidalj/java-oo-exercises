@@ -1,11 +1,12 @@
 package Baseball;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Team {
 
 	private String name;
-	private ArrayList<Player> roster;
+	private List<Player> roster;
 	private int totalSalary;
 	
 	public Team(String name){

@@ -7,6 +7,10 @@ public class FieldPlayer extends Player{
 	private int homeRuns;
 	private BattingStrategy bs;
 	
+	private static int allHomeRuns = 0;
+	private static final int HOMERUN = 2;
+	private static final int HIT = 1;
+	
 	public FieldPlayer(String name, int number, BattingStrategy bs){
 		super(name,number);
 		this.atBats = 0;
@@ -25,17 +29,23 @@ public class FieldPlayer extends Player{
 		this.hits += hits;
 		this.atBats += atBats;
 		this.homeRuns += homeRuns;
+		FieldPlayer.allHomeRuns += homeRuns;
 	}
 	
 	public void simulateAtBat(){
 		int outcome = this.bs.simulateAtBat();
-		if(outcome > 1){
+		if(outcome >= FieldPlayer.HOMERUN){
 			this.homeRuns++;
+			FieldPlayer.allHomeRuns++;
 		}
-		if(outcome > 0){
+		if(outcome >= FieldPlayer.HIT){
 			this.hits++;
 		}
 		this.atBats++;
+	}
+	
+	public static int getAllHomeRuns(){
+		return FieldPlayer.allHomeRuns;
 	}
 
 	public String toString(){
@@ -74,5 +84,6 @@ public class FieldPlayer extends Player{
 		System.out.println(fp);
 		System.out.println(fp1);
 		System.out.println(fp2);
+		System.out.println("Total home runs: " + FieldPlayer.getAllHomeRuns());
 	}
 }
