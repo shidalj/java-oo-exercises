@@ -1,16 +1,17 @@
 package Baseball;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Team {
 
 	private String name;
-	private ArrayList<Player> roster;
+	private List<Player> roster;
 	private int totalSalary;
 	
 	public Team(String name){
 		this.name = name;
-		this.roster = new ArrayList<Player>();
+		this.roster = new List<Player>();
 		this.totalSalary = 0;
 	}
 	
@@ -33,11 +34,11 @@ public class Team {
 	public String toString(){
 		return "Team: " + this.name + "   Total salary: " + this.totalSalary;
 	}
-	
+	/*
 	public static void main(String args[]){
 		Team cards = new Team("Cardinals");
 		FieldPlayer fp = new FieldPlayer("Yadier Molina", 4);
-		fp.updateStats(135, 450);
+		fp.updateStats(135, 450, 30);
 		Pitcher p = new Pitcher("Adam Wainwright", 50);
 		p.updateStats(145, 37, 15, 5);
 		cards.addPlayer(fp, 15000000);
@@ -45,4 +46,5 @@ public class Team {
 		System.out.println(cards);
 		cards.listRoster();
 	}
+	*/
 }

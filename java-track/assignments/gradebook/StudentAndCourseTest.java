@@ -1,4 +1,5 @@
-package pset9;
+package gradebook;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -79,7 +80,7 @@ public class StudentAndCourseTest extends TestCase {
 			assertTrue("GPA not rounded", (s.getGPA() + "").length() < 6);
 		}
 	}
-
+	
 	@Test
 	public void testComputeTuition() {
 		Student s = new Student("D", "S", 1);
@@ -156,7 +157,8 @@ public class StudentAndCourseTest extends TestCase {
 
 		}
 	}
-
+	
+    /*
 	@Test
 	public void testStudentToString() {
 		for (int i = 0; i < 100; i++) {
@@ -255,6 +257,6 @@ public class StudentAndCourseTest extends TestCase {
 		}
 	}
 
-
+*/
 
 }
