@@ -6,11 +6,13 @@ import java.util.List;
 public class Team {
 
 	private String name;
+	// List is an interface
 	private List<Player> roster;
 	private int totalSalary;
 	
 	public Team(String name){
 		this.name = name;
+		// create an ArrayList (implements the List interface) instance
 		this.roster = new ArrayList<Player>();
 		this.totalSalary = 0;
 	}
@@ -35,15 +37,21 @@ public class Team {
 		return "Team: " + this.name + "   Total salary: " + this.totalSalary;
 	}
 	
+	
 	public static void main(String args[]){
 		Team cards = new Team("Cardinals");
-	//	FieldPlayer fp = new FieldPlayer("Yadier Molina", 4);
-	//	fp.updateStats(135, 450, 20);
+		FieldPlayer fp = new FieldPlayer("Yadier Molina", 4, new PowerHittingStrategy());
 		Pitcher p = new Pitcher("Adam Wainwright", 50);
-		p.updateStats(145, 37, 15, 5);
-	//	cards.addPlayer(fp, 15000000);
+		// doesn't work because Player is abstract
+		// Player a = new Player("jon", 10);
+		cards.addPlayer(fp, 15000000);
 		cards.addPlayer(p, 19500000);
 		System.out.println(cards);
+		for(int i = 0; i < cards.roster.size(); i++){
+			for(int j = 0; j < 400; j++){
+				cards.roster.get(i).simulateAtBat();
+			}
+		}
 		cards.listRoster();
 	}
 }

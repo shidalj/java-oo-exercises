@@ -2,13 +2,19 @@ package Baseball;
 
 public class FieldPlayer extends Player{
 
+	// properties of a FieldPlayer
 	private int atBats;
 	private int hits;
 	private int homeRuns;
+	
+	// uses the strategy pattern - BattingStrategy is an interface
 	private BattingStrategy bs;
 	
+	// create a class field
 	private static int allHomeRuns = 0;
-	private static final int HOMERUN = 2;
+	
+	// declare some constants
+	static final int HOMERUN = 2;
 	private static final int HIT = 1;
 	
 	public FieldPlayer(String name, int number, BattingStrategy bs){
