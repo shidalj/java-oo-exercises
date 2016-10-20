@@ -11,7 +11,7 @@ public class Team {
 	
 	public Team(String name){
 		this.name = name;
-		this.roster = new List<Player>();
+		this.roster = new ArrayList<Player>();
 		this.totalSalary = 0;
 	}
 	
@@ -34,17 +34,14 @@ public class Team {
 	public String toString(){
 		return "Team: " + this.name + "   Total salary: " + this.totalSalary;
 	}
-	/*
+	
 	public static void main(String args[]){
 		Team cards = new Team("Cardinals");
-		FieldPlayer fp = new FieldPlayer("Yadier Molina", 4);
-		fp.updateStats(135, 450, 30);
+		FieldPlayer fp = new FieldPlayer("Yadier Molina", 4, new PowerHittingStrategy());
 		Pitcher p = new Pitcher("Adam Wainwright", 50);
-		p.updateStats(145, 37, 15, 5);
 		cards.addPlayer(fp, 15000000);
 		cards.addPlayer(p, 19500000);
 		System.out.println(cards);
 		cards.listRoster();
 	}
-	*/
 }
