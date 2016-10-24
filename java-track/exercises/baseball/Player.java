@@ -1,4 +1,4 @@
-package Baseball;
+package baseball;
 
 public abstract class Player {
 	// attributes
