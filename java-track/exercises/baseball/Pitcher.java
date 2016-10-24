@@ -1,4 +1,4 @@
-package Baseball;
+package baseball;
 
 public class Pitcher extends Player{
 	
